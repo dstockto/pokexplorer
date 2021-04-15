@@ -11,11 +11,11 @@
 }
 
 .pokecolor-white {
-    background-color: #CCCCCC;
+    background-color: #EEEEEE;
 }
 
 .pokecolor-black {
-    background-color: #333333;
+    background-color: #CCCCCC;
 }
 
 .pokecolor-brown {
@@ -32,4 +32,8 @@
 
 .pokecolor-yellow {
     background-color: lightgoldenrodyellow;
+}
+
+.pokecolor-gray {
+    background-color: #CCCCCC;
 }

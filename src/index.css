@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pokelist {
+  width: 45em;
+}
+
+.pokelist ul {
+  list-style: none;
+}
+
+.pokelist button {
+  border: none;
+  background-color: inherit;
+}
