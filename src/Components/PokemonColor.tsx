@@ -17,7 +17,7 @@ function PokemonColor({speciesUrl, children} : PokemonColorProps) {
   const pokemonSpecies: PokemonSpecies = species.data;
   const color = pokemonSpecies.color.name;
 
-  return <div className={`pokecolor-${color}`}>{children}</div>
+  return <div className={`pokecolor pokecolor-${color}`}>{children}</div>
 }
 
 export default PokemonColor;
