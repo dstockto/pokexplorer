@@ -21,11 +21,11 @@ function PokemonDetails({url}: PokemonDetailsProps) {
     <div>
       <h1>{pokemon.id} - {pokemon.name}</h1>
       <PokemonTypes types={pokemon.types} />
-      <div className={'height'}>Height: {pokemon.height}</div>
-      <div className={'weight'}>Weight: {pokemon.weight}</div>
+      <div className={'height'}><strong>Height:</strong> {pokemon.height}</div>
+      <div className={'weight'}><strong>Weight:</strong> {pokemon.weight}</div>
+      <PokemonSpeciesInfo species={pokemon.species.url} />
       <div className={'images'}>
         <PokemonSprites sprites={pokemon.sprites} />
-        <PokemonSpeciesInfo species={pokemon.species.url} />
       </div>
     </div>
   )

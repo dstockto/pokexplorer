@@ -1,5 +1,4 @@
 import * as React from "react";
-import RestLink from "../interface/RestLink";
 import Type from "../interface/Type";
 
 interface PokemonTypesProps {

@@ -1,6 +1,5 @@
 import * as React from "react";
 import usePokemonSpecies from "../api/usePokemonSpecies";
-import RestLink from "../interface/RestLink";
 
 interface PokemonSpeciesInfoProps {
   species: string
