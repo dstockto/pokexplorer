@@ -15,7 +15,6 @@ function PokemonSprites({sprites}: PokemonSpritesProps) {
     {sprites.back_shiny && <img src={sprites.back_shiny} alt={'Back shiny view'} />}
     {sprites.front_shiny_female && <img src={sprites.front_shiny_female} alt={'Front shiny female view'} />}
     {sprites.back_shiny_female && <img src={sprites.back_shiny_female} alt={'Back shiny female view'} />}
-
   </div>
 }
 

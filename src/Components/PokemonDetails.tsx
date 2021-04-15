@@ -4,6 +4,7 @@ import Pokemon from "../interface/Pokemon";
 import PokemonSprites from "./PokemonSprites";
 import PokemonSpeciesInfo from "./PokemonSpeciesInfo";
 import PokemonTypes from "./PokemonTypes";
+import PokemonMoves from "./PokemonMoves";
 
 interface PokemonDetailsProps {
   url: string
@@ -24,6 +25,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       <div className={'height'}><strong>Height:</strong> {pokemon.height}</div>
       <div className={'weight'}><strong>Weight:</strong> {pokemon.weight}</div>
       <PokemonSpeciesInfo species={pokemon.species.url} />
+      <PokemonMoves moves={pokemon.moves} />
       <div className={'images'}>
         <PokemonSprites sprites={pokemon.sprites} />
       </div>
