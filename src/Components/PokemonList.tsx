@@ -1,12 +1,14 @@
 import * as React from "react";
 import RestLink from "../interface/RestLink";
 
-function PokemonList({pokemonList, choosePokemon}: PokemonListProps) {
-  if (pokemonList.length === 0) {
-    return <p>No pokemon found</p>
-  }
+function PokemonList({pokemonList, choosePokemon, children}: PokemonListProps) {
   return (
     <div className={'pokelist'}>
+      {children}
+      {pokemonList.length === 0 &&
+      <p>No pokemon found</p>
+      }
+      {pokemonList.length > 0 &&
       <ul>
         {pokemonList.map((link) => (
           <li key={link.name}>
@@ -16,6 +18,7 @@ function PokemonList({pokemonList, choosePokemon}: PokemonListProps) {
           </li>
         ))}
       </ul>
+      }
     </div>
   )
 }
@@ -23,6 +26,7 @@ function PokemonList({pokemonList, choosePokemon}: PokemonListProps) {
 interface PokemonListProps {
   pokemonList: RestLink[],
   choosePokemon: (url: string) => void,
+  children: JSX.Element[] | JSX.Element
 }
 
 export default PokemonList;

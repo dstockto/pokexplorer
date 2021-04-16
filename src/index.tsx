@@ -6,7 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from "react-query";
 
 const queryClient = new QueryClient({
-
+  defaultOptions: {
+    queries: {
+      staleTime: 3600000,
+      cacheTime: 3600000,
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    }
+  }
 });
 
 ReactDOM.render(

@@ -5,7 +5,8 @@ function usePokemonSpecies(speciesUrl: string) {
     ['species', speciesUrl],
     () => {
       return fetch(speciesUrl).then(res => res.json());
-    });
+    }
+  );
 }
 
 export default usePokemonSpecies;

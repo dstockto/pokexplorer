@@ -5,12 +5,12 @@ import PokemonList from "./Components/PokemonList";
 import {useQuery} from "react-query";
 import getPokemonList from "./api/pokemonList";
 import PokemonDetails from "./Components/PokemonDetails";
-import { ReactQueryDevtools } from 'react-query/devtools'
+import {ReactQueryDevtools} from 'react-query/devtools'
 import RestLink from "./interface/RestLink";
 
 function App() {
-  const pokemonList = useQuery('pokemon_list', getPokemonList, {cacheTime: 60*60*1000});
-  const [pokemonUrl, setPokemonUrl] = useState<string|null>(null);
+  const pokemonList = useQuery('pokemon_list', getPokemonList);
+  const [pokemonUrl, setPokemonUrl] = useState<string | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
 
   const pokeFiltered = (): RestLink[] => {
@@ -21,18 +21,19 @@ function App() {
   }
 
   return (
-      <div className="App">
+    <div className="App">
+      {pokemonList.isLoading && <p>Loading</p>}
+      {pokemonList.data &&
+      <PokemonList
+        pokemonList={pokeFiltered().slice(0, 25)}
+        choosePokemon={setPokemonUrl}
+      >
         <SearchBox applyFilter={setFilter}/>
-        {pokemonList.isLoading && <p>Loading</p>}
-        {pokemonList.data &&
-          <PokemonList
-            pokemonList={pokeFiltered().slice(0,25)}
-            choosePokemon={setPokemonUrl}
-          />
-        }
-        {pokemonUrl && <PokemonDetails  url={pokemonUrl}/>}
-        <ReactQueryDevtools initialIsOpen={false} />
-      </div>
+      </PokemonList>
+      }
+      {pokemonUrl && <PokemonDetails url={pokemonUrl}/>}
+      <ReactQueryDevtools initialIsOpen={false}/>
+    </div>
   );
 }
 
