@@ -1,18 +1,18 @@
 .pokecolor {
     padding: 1em;
-    border-left: 1px solid black;
+    border: 1px solid black;
 }
 
 .pokecolor-green {
-    background-color: #CCFFCC;
+    background-color: #b6f5b6;
 }
 
 .pokecolor-red {
-    background-color: #FFCCCC;
+    background-color: #ffaaaa;
 }
 
 .pokecolor-blue {
-    background-color: #CCCCFF;
+    background-color: #b4b4f5;
 }
 
 .pokecolor-white {
@@ -20,23 +20,23 @@
 }
 
 .pokecolor-black {
-    background-color: #CCCCCC;
+    background-color: #a0a0a0;
 }
 
 .pokecolor-brown {
-    background-color: sandybrown;
+    background-color: #a3642a;
 }
 
 .pokecolor-pink {
-    background-color: pink;
+    background-color: #fabcc7;
 }
 
 .pokecolor-purple {
-    background-color: mediumpurple;
+    background-color: #936fdb;
 }
 
 .pokecolor-yellow {
-    background-color: lightgoldenrodyellow;
+    background-color: #fdfdbc;
 }
 
 .pokecolor-gray {

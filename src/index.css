@@ -12,8 +12,12 @@ code {
     monospace;
 }
 
-.pokelist {
+.pokedetail {
   width: 45em;
+}
+
+.pokelist {
+  width: 15em;
 }
 
 .pokelist ul {
