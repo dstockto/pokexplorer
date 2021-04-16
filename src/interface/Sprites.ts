@@ -22,7 +22,14 @@ interface Sprites {
   front_female: string|null,
   front_shiny: string|null,
   front_shiny_female: string|null,
-  other: Map<string, Map<string, string|null>>,
+  other: {
+    dream_world: {
+      front_default: string|null,
+    },
+    "official-artwork": {
+      front_default: string|null,
+    },
+  },
   versions: Map<generation, GameMap>
 }
 

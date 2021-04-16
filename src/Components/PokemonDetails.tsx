@@ -6,6 +6,7 @@ import PokemonSpeciesInfo from "./PokemonSpeciesInfo";
 import PokemonTypes from "./PokemonTypes";
 import PokemonMoves from "./PokemonMoves";
 import PokemonColor from "./PokemonColor";
+import PokemonOfficialArt from "./PokemonOfficialArt";
 
 interface PokemonDetailsProps {
   url: string
@@ -21,6 +22,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
 
   return (
     <PokemonColor speciesUrl={pokemon.species.url}>
+      <PokemonOfficialArt sprites={pokemon.sprites} />
       <h1>{pokemon.id} - {pokemon.name}</h1>
       <PokemonTypes types={pokemon.types}/>
       <div className={'height'}><strong>Height:</strong> {pokemon.height}</div>

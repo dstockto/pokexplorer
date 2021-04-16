@@ -1,6 +1,7 @@
 .pokecolor {
     padding: 1em;
     border: 1px solid black;
+    z-index: 0;
 }
 
 .pokecolor-green {

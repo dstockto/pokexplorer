@@ -18,6 +18,9 @@ code {
 
 .pokelist {
   width: 15em;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: brightness(60%);
+  z-index: 2;
 }
 
 .pokelist ul {
@@ -27,4 +30,12 @@ code {
 .pokelist button {
   border: none;
   background-color: inherit;
+}
+
+.official-art {
+  float: right;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  opacity: 50%;
 }
