@@ -12,10 +12,10 @@ function EvolutionChain({chain}: EvolutionChainProps) {
     <div className={'evolution-chain'}>
       {chain.map((species, i) => {
           if (i > 0) {
-            return <>
-              <img src={arrow} alt={'arrow'}/>
-              <SpeciesPicture key={species.name} species={species}/>
-            </>;
+            return [
+              <img key={`arrow-${i}`} src={arrow} alt={'arrow'}/>,
+              <SpeciesPicture key={`species.name-post-arrow`} species={species}/>
+            ];
           } else {
             return <SpeciesPicture key={species.name} species={species}/>;
           }
