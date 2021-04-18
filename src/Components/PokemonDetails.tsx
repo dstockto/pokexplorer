@@ -31,7 +31,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       <div className={'height'}><strong>Height:</strong> {pokemon.height}</div>
       <div className={'weight'}><strong>Weight:</strong> {pokemon.weight}</div>
       <PokemonSpeciesInfo species={pokemon.species.url}/>
-      <PokemonMoves moves={pokemon.moves}/>
+      <PokemonMoves moves={pokemon.moves} initial_collapsed={true}/>
       <div className={'images'}>
         <PokemonSprites sprites={pokemon.sprites}/>
       </div>
