@@ -6,7 +6,7 @@ interface PokemonPictureProps {
 }
 
 function PokemonPicture({url, alt}: PokemonPictureProps) {
-  return <img src={url} alt={`${alt} picture`} title={alt}/>;
+  return <img src={url} alt={`${alt}`} title={alt}/>;
 }
 
 export default PokemonPicture;
