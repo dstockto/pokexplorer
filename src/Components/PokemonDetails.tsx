@@ -1,5 +1,5 @@
 import * as React from "react";
-import usePokemonDetails from "../api/pokemonDetails";
+import usePokemonDetails from "../api/usePokemonDetails";
 import Pokemon from "../interface/Pokemon";
 import PokemonSprites from "./PokemonSprites";
 import PokemonSpeciesInfo from "./PokemonSpeciesInfo";
@@ -7,6 +7,8 @@ import PokemonTypes from "./PokemonTypes";
 import PokemonMoves from "./PokemonMoves";
 import PokemonColor from "./PokemonColor";
 import PokemonOfficialArt from "./PokemonOfficialArt";
+import PokemonEvolution from "./PokemonEvolution";
+import usePokemonSpecies from "../api/usePokemonSpecies";
 
 interface PokemonDetailsProps {
   url: string
@@ -14,6 +16,7 @@ interface PokemonDetailsProps {
 
 function PokemonDetails({url}: PokemonDetailsProps) {
   const details = usePokemonDetails(url);
+  const species = usePokemonSpecies(details?.data?.species?.url);
   if (details.isLoading) {
     return <p>Loading</p>;
   }
@@ -32,6 +35,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       <div className={'images'}>
         <PokemonSprites sprites={pokemon.sprites}/>
       </div>
+      <PokemonEvolution species={species.data} />
     </PokemonColor>
   )
 }
