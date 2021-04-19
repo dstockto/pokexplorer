@@ -1,4 +1,5 @@
 import RestLink from "./RestLink";
+import PokemonLink from "./PokemonLink";
 
 interface PokemonSpecies {
   base_happiness: number,
@@ -56,7 +57,7 @@ interface PokemonSpecies {
   varieties: [
     {
       is_default: boolean,
-      pokemon: RestLink,
+      pokemon: PokemonLink,
     }
   ]
 }

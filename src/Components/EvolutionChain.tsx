@@ -1,26 +1,26 @@
 import * as React from "react";
-import RestLink from "../interface/RestLink";
-import SpeciesPicture from "./SpeciesPicture";
 import arrow from "../img/arrow.svg";
+import SpeciesLink from "../interface/SpeciesLink";
+import SpeciesPictures from "./SpeciesPictures";
 
 interface EvolutionChainProps {
-  chain: RestLink[]
+  chain: SpeciesLink[] // species
 }
 
 function EvolutionChain({chain}: EvolutionChainProps) {
+  // a species has varieties of pokemon
   return (
     <div className={'evolution-chain'}>
       {chain.map((species, i) => {
           if (i > 0) {
             return [
               <img key={`arrow-${i}`} src={arrow} alt={'arrow'}/>,
-              <SpeciesPicture key={`species.name-post-arrow`} species={species}/>
+              <SpeciesPictures key={`${species.name}-${i}`} speciesLink={species} />
             ];
           } else {
-            return <SpeciesPicture key={species.name} species={species}/>;
+            return <SpeciesPictures key={`${species.name}-${i}`} speciesLink={species} />
           }
-        }
-      )
+        })
       }
     </div>
   );

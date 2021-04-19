@@ -1,11 +1,11 @@
 import EvolutionDetails from "./EvolutionDetails";
-import RestLink from "./RestLink";
+import SpeciesLink from "./SpeciesLink";
 
 interface EvolvesTo {
   evolution_details: EvolutionDetails[],
   evolves_to: EvolvesTo[],
   is_baby: boolean,
-  species: RestLink,
+  species: SpeciesLink,
 }
 
 export default EvolvesTo;
