@@ -1,6 +1,6 @@
-import RestLink from "./RestLink";
 import EvolutionDetails from "./EvolutionDetails";
 import EvolvesTo from "./EvolvesTo";
+import SpeciesLink from "./SpeciesLink";
 
 interface EvolutionChain {
   baby_trigger_item: string|null,
@@ -8,7 +8,7 @@ interface EvolutionChain {
     evolution_details: EvolutionDetails[],
     evolves_to: EvolvesTo[],
     is_baby: boolean,
-    species: RestLink,
+    species: SpeciesLink,
   },
   id: number,
 }

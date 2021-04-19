@@ -5,6 +5,7 @@ import RestLink from "./RestLink";
 import Type from "./Type";
 import Sprites from "./Sprites";
 import Statistic from "./Statistic";
+import SpeciesLink from "./SpeciesLink";
 
 
 
@@ -22,7 +23,7 @@ interface Pokemon {
   name: string,
   order: number,
   past_types: [],
-  species: RestLink,
+  species: SpeciesLink,
   sprites: Sprites,
   stats: Statistic[],
   types: Type[],
