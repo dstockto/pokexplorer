@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import SearchBox from "./Components/SearchBox";
-import PokemonList from "./Components/PokemonList";
 import {useQuery} from "react-query";
 import getPokemonList from "./api/pokemonList";
-import PokemonDetails from "./Components/PokemonDetails";
-import {ReactQueryDevtools} from 'react-query/devtools'
 import RestLink from "./interface/RestLink";
+import SearchBox from "./Components/SearchBox";
+import PokemonDetails from "./Components/PokemonDetails";
+import PokemonList from "./Components/PokemonList";
+import LoadingSpinner from "./Components/LoadingSpinner";
 
 function App() {
   const pokemonList = useQuery('pokemon_list', getPokemonList);
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      {pokemonList.isLoading && <p>Loading</p>}
+      {pokemonList.isLoading && <LoadingSpinner />}
       {pokemonList.data &&
       <PokemonList
         pokemonList={pokeFiltered().slice(0, 25)}
@@ -32,7 +32,6 @@ function App() {
       </PokemonList>
       }
       {pokemonUrl && <PokemonDetails url={pokemonUrl}/>}
-      <ReactQueryDevtools initialIsOpen={false}/>
     </div>
   );
 }
