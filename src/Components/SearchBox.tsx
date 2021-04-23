@@ -12,7 +12,6 @@ function SearchBox({applyFilter}: SearchBoxProps) {
     applyFilter(e.target.value);
   }
 
-
   return (
     <div>
     <input value={filter || ''} onChange={doFilter} />

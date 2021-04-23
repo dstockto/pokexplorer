@@ -2,6 +2,7 @@ import * as React from "react";
 import usePokemonSpecies from "../api/usePokemonSpecies";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import "../style/pokecolors.css";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface PokemonColorProps {
   speciesUrl: string,
@@ -11,7 +12,7 @@ interface PokemonColorProps {
 function PokemonColor({speciesUrl, children} : PokemonColorProps) {
   const species = usePokemonSpecies(speciesUrl);
   if (species.isLoading) {
-    return null;
+    return <LoadingSpinner />;
   }
 
   const pokemonSpecies: PokemonSpecies = species.data;

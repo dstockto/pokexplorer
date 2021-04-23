@@ -4,6 +4,7 @@ import useEvolutionChain from "../api/useEvolutionChain";
 import RestLink from "../interface/RestLink";
 import EvolvesTo from "../interface/EvolvesTo";
 import EvolutionChain from "./EvolutionChain";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface PokemonEvolutionProps {
   species: PokemonSpecies
@@ -25,7 +26,7 @@ function buildEvolutionChains(chain: RestLink[], tree: EvolvesTo, chains: RestLi
 function PokemonEvolution({species}:PokemonEvolutionProps) {
   const evolution = useEvolutionChain(species.evolution_chain.url);
   if (evolution.isLoading) {
-    return <p>Evolution loading...</p>
+    return <LoadingSpinner />
   }
   const tree: EvolvesTo = evolution.data.chain;
 

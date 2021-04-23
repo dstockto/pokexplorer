@@ -4,6 +4,7 @@ import RestLink from "../interface/RestLink";
 import usePokemonSpecies from "../api/usePokemonSpecies";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import PokemonApiPicture from "./PokemonApiPicture";
+import LoadingSpinner from "./LoadingSpinner";
 
 
 interface SpeciesPicturesProps {
@@ -15,7 +16,7 @@ function SpeciesPictures({speciesLink}: SpeciesPicturesProps) {
   const [pokemonNumber, setPokemonNumber] = useState(0);
 
   if (isLoading) {
-    return null;
+    return <LoadingSpinner />;
   }
 
   const species: PokemonSpecies = data;

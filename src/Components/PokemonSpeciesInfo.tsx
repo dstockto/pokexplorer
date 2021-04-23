@@ -1,5 +1,6 @@
 import * as React from "react";
 import usePokemonSpecies from "../api/usePokemonSpecies";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface PokemonSpeciesInfoProps {
   species: string
@@ -8,7 +9,7 @@ interface PokemonSpeciesInfoProps {
 function PokemonSpeciesInfo({species} : PokemonSpeciesInfoProps) {
   const speciesInfo = usePokemonSpecies(species);
   if (speciesInfo.isLoading) {
-    return (<p>Loading...</p>)
+    return (<LoadingSpinner />)
   }
 
   const genus = speciesInfo.data.genera.filter((genera: any) => genera.language.name === 'en')[0].genus;
