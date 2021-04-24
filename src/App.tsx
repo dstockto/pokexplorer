@@ -7,6 +7,7 @@ import SearchBox from "./Components/SearchBox";
 import PokemonDetails from "./Components/PokemonDetails";
 import PokemonList from "./Components/PokemonList";
 import LoadingSpinner from "./Components/LoadingSpinner";
+import GlobalLoader from "./Components/GlobalLoader";
 
 function App() {
   const pokemonList = useQuery('pokemon_list', getPokemonList);
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <GlobalLoader />
       {pokemonList.isLoading && <LoadingSpinner />}
       {pokemonList.data &&
       <PokemonList
