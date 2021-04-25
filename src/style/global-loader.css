@@ -3,3 +3,14 @@
     top: 0;
     right: 1em;
 }
+
+.global-loader span {
+    font-size: 4em;
+    position: relative;
+    top: 76px;
+    left: 36px;
+}
+
+.hidden {
+    display: none;
+}
