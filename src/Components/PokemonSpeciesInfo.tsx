@@ -12,6 +12,10 @@ function PokemonSpeciesInfo({species} : PokemonSpeciesInfoProps) {
     return (<LoadingSpinner />)
   }
 
+  if (speciesInfo.data === undefined) {
+    return <LoadingSpinner />
+  }
+
   const genus = speciesInfo.data.genera.filter((genera: any) => genera.language.name === 'en')[0].genus;
   return <div><strong>Genus:</strong> {genus}</div>;
 }

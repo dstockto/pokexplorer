@@ -10,6 +10,7 @@ import PokemonOfficialArt from "./PokemonOfficialArt";
 import PokemonEvolution from "./PokemonEvolution";
 import usePokemonSpecies from "../api/usePokemonSpecies";
 import LoadingSpinner from "./LoadingSpinner";
+import PokemonSpeciesFlavorText from "./PokemonSpeciesFlavorText";
 
 interface PokemonDetailsProps {
   url: string
@@ -19,15 +20,16 @@ function PokemonDetails({url}: PokemonDetailsProps) {
   const details = usePokemonDetails(url);
   const species = usePokemonSpecies(details?.data?.species?.url);
   if (details.isLoading) {
-    return <LoadingSpinner />;
+    return <LoadingSpinner/>;
   }
 
   const pokemon: Pokemon = details.data;
 
   return (
     <PokemonColor speciesUrl={pokemon.species.url}>
-      <PokemonOfficialArt sprites={pokemon.sprites} />
+      <PokemonOfficialArt sprites={pokemon.sprites}/>
       <h1>{pokemon.id} - {pokemon.name}</h1>
+      <PokemonSpeciesFlavorText species={pokemon.species}/>
       <PokemonTypes types={pokemon.types}/>
       <div className={'height'}><strong>Height:</strong> {pokemon.height}</div>
       <div className={'weight'}><strong>Weight:</strong> {pokemon.weight}</div>
@@ -36,7 +38,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       <div className={'images'}>
         <PokemonSprites sprites={pokemon.sprites}/>
       </div>
-      <PokemonEvolution species={species.data} />
+      <PokemonEvolution species={species.data}/>
     </PokemonColor>
   )
 }
