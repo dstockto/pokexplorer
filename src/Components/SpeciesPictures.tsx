@@ -16,10 +16,13 @@ function SpeciesPictures({speciesLink}: SpeciesPicturesProps) {
   const [pokemonNumber, setPokemonNumber] = useState(0);
 
   if (isLoading) {
-    return <LoadingSpinner />;
+    return <LoadingSpinner/>;
   }
 
-  const species: PokemonSpecies = data;
+  const species: PokemonSpecies | undefined = data;
+  if (species === undefined) {
+    return <LoadingSpinner/>;
+  }
   const varietyCount = species.varieties.length;
 
   if (varietyCount === 1) {
@@ -29,8 +32,8 @@ function SpeciesPictures({speciesLink}: SpeciesPicturesProps) {
     <div>
       <button onClick={() => {
         setPokemonNumber((pokemonNumber + 1) % varietyCount)
-      }} >
-        <PokemonApiPicture pokemonLink={species.varieties[pokemonNumber].pokemon} />
+      }}>
+        <PokemonApiPicture pokemonLink={species.varieties[pokemonNumber].pokemon}/>
       </button>
     </div>
   );

@@ -15,7 +15,12 @@ function PokemonColor({speciesUrl, children} : PokemonColorProps) {
     return <LoadingSpinner />;
   }
 
-  const pokemonSpecies: PokemonSpecies = species.data;
+  const pokemonSpecies: PokemonSpecies|undefined = species.data;
+
+  if (pokemonSpecies === undefined) {
+    return <div className={`pokedetail pokecolor pokecolor-white`}>{children}</div>;
+  }
+
   const color = pokemonSpecies.color.name;
 
   return <div className={`pokedetail pokecolor pokecolor-${color}`}>{children}</div>

@@ -7,7 +7,7 @@ import EvolutionChain from "./EvolutionChain";
 import LoadingSpinner from "./LoadingSpinner";
 
 interface PokemonEvolutionProps {
-  species: PokemonSpecies
+  species: PokemonSpecies|undefined
 }
 
 function buildEvolutionChains(chain: RestLink[], tree: EvolvesTo, chains: RestLink[][]) {
@@ -24,14 +24,18 @@ function buildEvolutionChains(chain: RestLink[], tree: EvolvesTo, chains: RestLi
 }
 
 function PokemonEvolution({species}:PokemonEvolutionProps) {
-  const evolution = useEvolutionChain(species.evolution_chain.url);
+  const evolution = useEvolutionChain(species?.evolution_chain?.url);
   if (evolution.isLoading) {
     return <LoadingSpinner />
   }
   const tree: EvolvesTo = evolution.data.chain;
+  if (species === undefined) {
+    return null;
+  }
 
   let chains: RestLink[][] = [];
   buildEvolutionChains([], tree, chains);
+
 
   return (
     <div>
