@@ -22,7 +22,7 @@ function PokemonSpeciesFlavorText({species}: PokemonSpeciesFlavorTextProps) {
     <p className={'flavor-text'}>
       <em>
         {pokemonSpecies?.flavor_text_entries
-          .filter((textEntry) => textEntry.language.name === 'en')[0].flavor_text.replace('\n', ' ')}
+          .filter((textEntry) => textEntry.language.name === 'en')[0].flavor_text.replace(/\\n|\f/, ' ')}
       </em>
     </p>
   );
