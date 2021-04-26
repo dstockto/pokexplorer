@@ -5,7 +5,7 @@ import usePokemonSpecies from "../api/usePokemonSpecies";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import PokemonApiPicture from "./PokemonApiPicture";
 import LoadingSpinner from "./LoadingSpinner";
-
+import "../style/pokemon-picture.css";
 
 interface SpeciesPicturesProps {
   speciesLink: RestLink
@@ -29,11 +29,12 @@ function SpeciesPictures({speciesLink}: SpeciesPicturesProps) {
     return <PokemonApiPicture pokemonLink={species.varieties[pokemonNumber].pokemon}/>
   }
   return (
-    <div>
+    <div className={'pokemon-toggle-pic'}>
       <button onClick={() => {
         setPokemonNumber((pokemonNumber + 1) % varietyCount)
       }}>
         <PokemonApiPicture pokemonLink={species.varieties[pokemonNumber].pokemon}/>
+        <span className={'clickable'}>➢</span>
       </button>
     </div>
   );
