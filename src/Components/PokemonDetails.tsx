@@ -40,7 +40,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       </div>
       <PokemonEvolution species={species.data}/>
     </PokemonColor>
-  )
+  );
 }
 
 export default PokemonDetails;
