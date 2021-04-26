@@ -1,0 +1,15 @@
+.pokemon-toggle-pic {
+
+}
+
+.pokemon-toggle-pic .clickable {
+    float: right;
+    font-size: xx-large;
+    position: static;
+    bottom: 10px;
+    right: 0;
+}
+
+.pokemon-toggle-pic figure {
+    margin: 0;
+}
