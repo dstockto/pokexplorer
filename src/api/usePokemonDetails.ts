@@ -1,8 +1,9 @@
 import {useQuery} from "react-query";
+import fetchPokemonByUrl from "./fetchPokemonByUrl";
 
 function usePokemonDetails(url: string) {
   return useQuery(['pokemon', url], () => {
-    return fetch(url).then(res => res.json());
+    return fetchPokemonByUrl(url);
   });
 }
 

@@ -23,10 +23,10 @@ function buildEvolutionChains(chain: RestLink[], tree: EvolvesTo, chains: RestLi
   }
 }
 
-function PokemonEvolution({species}:PokemonEvolutionProps) {
+function PokemonEvolution({species}: PokemonEvolutionProps) {
   const evolution = useEvolutionChain(species?.evolution_chain?.url);
   if (evolution.isLoading) {
-    return <LoadingSpinner />
+    return <LoadingSpinner/>
   }
   const tree: EvolvesTo = evolution.data.chain;
   if (species === undefined) {
@@ -44,8 +44,7 @@ function PokemonEvolution({species}:PokemonEvolutionProps) {
         return <EvolutionChain key={`evolution-${species.name}-${i}`} chain={chain}/>;
       })}
     </div>
-)
-
+  )
 }
 
 export default PokemonEvolution;
