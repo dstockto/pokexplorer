@@ -1,10 +1,10 @@
 import * as React from "react";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import useEvolutionChain from "../api/useEvolutionChain";
-import RestLink from "../interface/RestLink";
 import EvolvesTo from "../interface/EvolvesTo";
 import EvolutionChain from "./EvolutionChain";
 import LoadingSpinner from "./LoadingSpinner";
+import RestLink from "../interface/links/RestLink";
 
 interface PokemonEvolutionProps {
   species: PokemonSpecies|undefined

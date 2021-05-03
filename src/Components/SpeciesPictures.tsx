@@ -1,6 +1,5 @@
 import * as React from "react";
 import {useEffect, useState} from "react";
-import RestLink from "../interface/RestLink";
 import usePokemonSpecies from "../api/usePokemonSpecies";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import PokemonApiPicture from "./PokemonApiPicture";
@@ -9,6 +8,7 @@ import LoadingSpinner from "./LoadingSpinner";
 import "../style/pokemon-picture.css";
 import prefetchSpecies from "../api/prefetchSpecies";
 import {useQueryClient} from "react-query";
+import RestLink from "../interface/links/RestLink";
 
 interface SpeciesPicturesProps {
   speciesLink: RestLink

@@ -1,7 +1,7 @@
 import * as React from "react";
-import SpeciesLink from "../interface/SpeciesLink";
 import usePokemonSpecies from "../api/usePokemonSpecies";
 import LoadingSpinner from "./LoadingSpinner";
+import SpeciesLink from "../interface/links/SpeciesLink";
 
 interface PokemonSpeciesFlavorTextProps {
   species: SpeciesLink
@@ -20,10 +20,10 @@ function PokemonSpeciesFlavorText({species}: PokemonSpeciesFlavorTextProps) {
 
   return (
     <p className={'flavor-text'}>
-      <em>
+      {/*<em>*/}
         {pokemonSpecies?.flavor_text_entries
           .filter((textEntry) => textEntry.language.name === 'en')[0].flavor_text.replace(/\\n|\f/, ' ')}
-      </em>
+      {/*</em>*/}
     </p>
   );
 }

@@ -1,6 +1,8 @@
 import * as React from "react";
 import Move from "../interface/Move";
 import {useState} from "react";
+import {Button} from "antd";
+import "antd/dist/antd.css";
 
 interface PokemonMovesProps {
   moves: Move[],
@@ -13,7 +15,7 @@ function PokemonMoves({moves, initial_collapsed}: PokemonMovesProps) {
   return (
     <div className={'moves'}>
       <strong>Moves: </strong>
-      <button onClick={() => setCollapsed(!collapsed)}>{collapsed ? 'Show' : 'Hide'}</button>
+      <Button type={"primary"} onClick={() => setCollapsed(!collapsed)}>{collapsed ? 'Show' : 'Hide'}</Button>
       {!collapsed && moves.map((move) => {
         return move.move.name
       }).join(', ')}

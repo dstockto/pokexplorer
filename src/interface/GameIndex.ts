@@ -1,4 +1,4 @@
-import RestLink from "./RestLink";
+import RestLink from "./links/RestLink";
 
 interface GameIndex {
   game_index: number,

@@ -1,5 +1,5 @@
 import EvolutionDetails from "./EvolutionDetails";
-import SpeciesLink from "./SpeciesLink";
+import SpeciesLink from "./links/SpeciesLink";
 
 interface EvolvesTo {
   evolution_details: EvolutionDetails[],

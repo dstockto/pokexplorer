@@ -1,7 +1,7 @@
 import * as React from "react";
 import arrow from "../img/arrow.svg";
-import SpeciesLink from "../interface/SpeciesLink";
 import SpeciesPictures from "./SpeciesPictures";
+import SpeciesLink from "../interface/links/SpeciesLink";
 
 interface EvolutionChainProps {
   chain: SpeciesLink[] // species

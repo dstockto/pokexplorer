@@ -1,11 +1,11 @@
 import Ability from "./Ability";
 import GameIndex from "./GameIndex";
 import Move from "./Move";
-import RestLink from "./RestLink";
 import Type from "./Type";
 import Sprites from "./Sprites";
 import Statistic from "./Statistic";
-import SpeciesLink from "./SpeciesLink";
+import RestLink from "./links/RestLink";
+import SpeciesLink from "./links/SpeciesLink";
 
 
 
