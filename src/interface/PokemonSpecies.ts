@@ -1,10 +1,5 @@
 import TranslatedNameLink from "./TranslatedNameLink";
-import RestLink from "./links/RestLink";
-import LanguageLink from "./links/LanguageLink";
-import VersionLink from "./links/VersionLink";
-import GeneraLink from "./links/GeneraLink";
-import PokedexLink from "./links/PokedexLink";
-import PokemonLink from "./links/PokemonLink";
+import {GeneraLink, LanguageLink, PokedexLink, PokemonLink, RestLink, VersionLink} from "./links";
 
 interface PokemonSpecies {
   base_happiness: number,

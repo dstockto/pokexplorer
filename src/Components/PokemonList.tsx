@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Menu} from "antd";
-import RestLink from "../interface/links/RestLink";
+import {PokemonLink} from "../interface/links";
 
 function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: PokemonListProps) {
   return (
@@ -27,7 +27,7 @@ function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: P
 }
 
 interface PokemonListProps {
-  pokemonList: RestLink[],
+  pokemonList: PokemonLink[],
   choosePokemon: (url: string) => void,
   activePokemonUrl: string | null,
   children: JSX.Element[] | JSX.Element

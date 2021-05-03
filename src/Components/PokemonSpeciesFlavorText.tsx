@@ -1,7 +1,7 @@
 import * as React from "react";
 import usePokemonSpecies from "../api/usePokemonSpecies";
 import LoadingSpinner from "./LoadingSpinner";
-import SpeciesLink from "../interface/links/SpeciesLink";
+import {SpeciesLink} from "../interface/links";
 
 interface PokemonSpeciesFlavorTextProps {
   species: SpeciesLink

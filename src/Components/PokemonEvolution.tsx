@@ -4,7 +4,7 @@ import useEvolutionChain from "../api/useEvolutionChain";
 import EvolvesTo from "../interface/EvolvesTo";
 import EvolutionChain from "./EvolutionChain";
 import LoadingSpinner from "./LoadingSpinner";
-import RestLink from "../interface/links/RestLink";
+import {RestLink} from "../interface/links";
 
 interface PokemonEvolutionProps {
   species: PokemonSpecies|undefined

@@ -1,4 +1,4 @@
-import RestLink from "./links/RestLink";
+import {RestLink} from "./links";
 
 interface Statistic {
   base_stat: number,

@@ -8,7 +8,7 @@ import PokemonDetails from "./Components/PokemonDetails";
 import PokemonList from "./Components/PokemonList";
 import LoadingSpinner from "./Components/LoadingSpinner";
 import GlobalLoader from "./Components/GlobalLoader";
-import RestLink from "./interface/links/RestLink";
+import {RestLink} from "./interface/links";
 
 function App() {
   const pokemonList = useQuery('pokemon_list', getPokemonList);

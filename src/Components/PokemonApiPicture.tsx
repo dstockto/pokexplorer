@@ -1,7 +1,7 @@
 import * as React from "react";
 import usePokemonDetails from "../api/usePokemonDetails";
 import LoadingSpinner from "./LoadingSpinner";
-import PokemonLink from "../interface/links/PokemonLink";
+import {PokemonLink} from "../interface/links";
 
 interface PokemonApiPictureProps {
   pokemonLink: PokemonLink,

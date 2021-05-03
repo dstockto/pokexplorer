@@ -1,4 +1,4 @@
-import RestLink from "./links/RestLink";
+import {RestLink} from "./links";
 
 interface VersionDetail {
   level_earned_at: number,
