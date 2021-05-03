@@ -8,6 +8,7 @@ import LoadingSpinner from "./LoadingSpinner";
 import PokemonSpeciesFlavorText from "./PokemonSpeciesFlavorText";
 import PokemonHeader from "./PokemonHeader";
 import PokemonSpecies from "../interface/PokemonSpecies";
+import PokemonInfoBlock from "./PokemonInfoBlock";
 
 interface PokemonDetailsProps {
   url: string
@@ -37,13 +38,13 @@ function PokemonDetails({url}: PokemonDetailsProps) {
         </div>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonSpeciesFlavorText species={pokemon.species}/>
-          {/*<PokemonInfoBlock*/}
-          {/*  height={pokemon.height}*/}
-          {/*  category={species.genera}*/}
-          {/*  weight={pokemon.weight}*/}
-          {/*  abilities={pokemon.abilities}*/}
-          {/*  genderRate={species.gender_rate}*/}
-          {/*/>*/}
+          <PokemonInfoBlock
+            height={pokemon.height}
+            category={species.genera}
+            weight={pokemon.weight}
+            abilities={pokemon.abilities}
+            genderRate={species.gender_rate}
+          />
           {/*<PokemonWeaknesses/>*/}
         </div>
       </div>

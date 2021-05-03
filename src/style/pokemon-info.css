@@ -1,0 +1,18 @@
+.pokemon-info {
+    background-color: #30a7d7;
+    border-radius: 10px;
+    display: flex;
+    padding: 1em;
+    width: 100%;
+}
+
+.pokemon-info span.heading {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.pokemon-info .column {
+    display: flex;
+    flex-direction: column;
+}

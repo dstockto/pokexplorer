@@ -19,6 +19,7 @@ interface PokemonSpecies {
   ],
   form_descriptions: [],
   forms_switchable: boolean,
+  gender_rate: number,
   genera: GeneraLink[],
   generation: RestLink,
   growth_rate: RestLink,
