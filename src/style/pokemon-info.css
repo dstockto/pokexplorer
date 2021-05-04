@@ -2,17 +2,35 @@
     background-color: #30a7d7;
     border-radius: 10px;
     display: flex;
+    justify-content: space-around;
     padding: 1em;
     width: 100%;
+    font-family: 'Krona One', sans-serif;
 }
 
 .pokemon-info span.heading {
     color: white;
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
+    font-size: 1.2em;
+}
+
+.pokemon-info span.data {
+    color: black;
+    font-weight: 100;
 }
 
 .pokemon-info .column {
     display: flex;
     flex-direction: column;
+    margin-right: 2em;
+}
+
+.pokemon-info .column div {
+    display: flex;
+    flex-direction: column;
+}
+
+ul.pokemon-abilities {
+    list-style: none;
+    padding-inline-start: 0;
 }

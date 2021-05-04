@@ -1,3 +1,4 @@
+export type {default as AbilityLink} from './AbilityLink';
 export type {default as GeneraLink} from './GeneraLink';
 export type {default as LanguageLink} from './LanguageLink';
 export type {default as PokedexLink} from './PokedexLink';

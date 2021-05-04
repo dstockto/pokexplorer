@@ -2,6 +2,7 @@ import * as React from "react";
 import Ability from "../interface/Ability";
 import {GeneraLink} from "../interface/links";
 import '../style/pokemon-info.css';
+import PokemonAbility from "./PokemonAbility";
 
 interface PokemonInfoBlockProps {
   height: number,
@@ -13,8 +14,8 @@ interface PokemonInfoBlockProps {
 
 function decimetersToFeetAndInches(height: number) {
   const inches = height * 3.9370079;
-  const feet = Math.floor(inches/12);
-  const remainder = inches - (feet*12);
+  const feet = Math.floor(inches / 12);
+  const remainder = inches - (feet * 12);
   return `${feet}' ${Math.ceil(remainder)}"`;
 }
 
@@ -41,21 +42,39 @@ function generaToCategory(category: GeneraLink[]) {
 }
 
 function renderAbilities(abilities: Ability[]) {
-  return abilities.filter((ability) => !ability.is_hidden)
-    .map(ability => ability.ability.name);
+  return (<ul className={'pokemon-abilities'}>
+      {
+        abilities
+          .filter((ability) => !ability.is_hidden)
+          .map(ability =>
+            <PokemonAbility abilityLink={ability.ability} />
+          )
+      }
+    </ul>
+  );
 }
 
-function PokemonInfoBlock({height, weight, category, abilities, genderRate}: PokemonInfoBlockProps) {
+function PokemonInfoBlock(
+{
+  height, weight, category, abilities, genderRate
+}
+: PokemonInfoBlockProps)
+{
   return (
     <div className={'pokemon-info'}>
       <div className={'column'}>
-        <div><span className={'heading'}>Height</span> {decimetersToFeetAndInches(height)}</div>
-        <div><span className={'heading'}>Weight</span> {hectogramsToPounds(weight)}</div>
-        <div><span className={'heading'}>Gender</span> {genderRateToIcons(genderRate)}</div>
+        <div><span className={'heading'}>Height</span> <span
+          className={'data'}> {decimetersToFeetAndInches(height)}</span></div>
+        <div><span className={'heading'}>Weight</span> <span className={'data'}>{hectogramsToPounds(weight)}</span>
+        </div>
+        <div><span className={'heading'}>Gender</span> <span className={'data'}>{genderRateToIcons(genderRate)}</span>
+        </div>
       </div>
       <div className={'column'}>
-        <div><span className={'heading'}>Category</span> {generaToCategory(category)}</div>
-        <div><span className={'heading'}>Abilities</span> {renderAbilities(abilities)} </div>
+        <div><span className={'heading'}>Category</span> <span className={'data'}>{generaToCategory(category)}</span>
+        </div>
+        <div><span className={'heading'}>Abilities</span> <span className={'data'}>{renderAbilities(abilities)}</span>
+        </div>
       </div>
     </div>
   );
