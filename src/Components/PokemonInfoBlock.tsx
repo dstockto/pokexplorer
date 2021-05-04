@@ -1,8 +1,10 @@
 import * as React from "react";
+import {useState} from "react";
 import Ability from "../interface/Ability";
 import {GeneraLink} from "../interface/links";
 import '../style/pokemon-info.css';
 import PokemonAbility from "./PokemonAbility";
+import {Button} from "antd";
 
 interface PokemonInfoBlockProps {
   height: number,
@@ -41,25 +43,38 @@ function generaToCategory(category: GeneraLink[]) {
   return genera[0].genus.replace(' Pokémon', '');
 }
 
-function renderAbilities(abilities: Ability[]) {
+function renderAbilities(abilities: Ability[], setAbilityInfo: (info: AbilityInfo|null) => void) {
   return (<ul className={'pokemon-abilities'}>
       {
         abilities
           .filter((ability) => !ability.is_hidden)
           .map(ability =>
-            <PokemonAbility abilityLink={ability.ability} />
+            <PokemonAbility abilityLink={ability.ability} setAbility={setAbilityInfo}/>
           )
       }
     </ul>
   );
 }
 
-function PokemonInfoBlock(
-{
-  height, weight, category, abilities, genderRate
+interface AbilityInfo {
+  name: string,
+  flavorText: string,
 }
-: PokemonInfoBlockProps)
-{
+
+function PokemonInfoBlock({height, weight, category, abilities, genderRate}: PokemonInfoBlockProps) {
+  const [abilityInfo, setAbilityInfo] = useState<AbilityInfo | null>(null);
+
+  if (abilityInfo) {
+    // TODO: Style this better
+    return (
+      <div className={'pokemon-info ability-info'}>
+        <Button type={"dashed"} onClick={() => setAbilityInfo(null)}>Close</Button>
+        <span>{abilityInfo.name}</span>
+        <div>{abilityInfo.flavorText}</div>
+      </div>
+    );
+  }
+
   return (
     <div className={'pokemon-info'}>
       <div className={'column'}>
@@ -73,7 +88,7 @@ function PokemonInfoBlock(
       <div className={'column'}>
         <div><span className={'heading'}>Category</span> <span className={'data'}>{generaToCategory(category)}</span>
         </div>
-        <div><span className={'heading'}>Abilities</span> <span className={'data'}>{renderAbilities(abilities)}</span>
+        <div><span className={'heading'}>Abilities</span> <span className={'data'}>{renderAbilities(abilities, setAbilityInfo)}</span>
         </div>
       </div>
     </div>
