@@ -35,7 +35,11 @@ function PokemonAbility({abilityLink: link, setAbility}: PokemonAbilityProps) {
 
   const {name, url} = link;
   const {isLoading, data} = usePokemonAbility(url);
-  return <li key={name}>{titleCase(name).replace('-', ' ')} {renderAbilityInfo(isLoading, data)}</li>;
+  return (
+    <li key={name}>
+      {titleCase(name).replace('-', ' ')} {renderAbilityInfo(isLoading, data)}
+    </li>
+  );
 }
 
 export default PokemonAbility;

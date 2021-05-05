@@ -5,6 +5,7 @@ import {GeneraLink} from "../interface/links";
 import '../style/pokemon-info.css';
 import PokemonAbility from "./PokemonAbility";
 import {Button} from "antd";
+import {titleCase} from "title-case";
 
 interface PokemonInfoBlockProps {
   height: number,
@@ -43,7 +44,7 @@ function generaToCategory(category: GeneraLink[]) {
   return genera[0].genus.replace(' Pokémon', '');
 }
 
-function renderAbilities(abilities: Ability[], setAbilityInfo: (info: AbilityInfo|null) => void) {
+function renderAbilities(abilities: Ability[], setAbilityInfo: (info: AbilityInfo | null) => void) {
   return (<ul className={'pokemon-abilities'}>
       {
         abilities
@@ -65,12 +66,15 @@ function PokemonInfoBlock({height, weight, category, abilities, genderRate}: Pok
   const [abilityInfo, setAbilityInfo] = useState<AbilityInfo | null>(null);
 
   if (abilityInfo) {
-    // TODO: Style this better
     return (
       <div className={'pokemon-info ability-info'}>
-        <Button type={"dashed"} onClick={() => setAbilityInfo(null)}>Close</Button>
-        <span>{abilityInfo.name}</span>
-        <div>{abilityInfo.flavorText}</div>
+        <div className={'column'}>
+          <div className={'ability-name'}>{titleCase(abilityInfo.name)}</div>
+          <div className={'description'}>{abilityInfo.flavorText}</div>
+        </div>
+        <div className={'column'}>
+          <Button type={"dashed"} onClick={() => setAbilityInfo(null)} className={'close-button'}>X</Button>
+        </div>
       </div>
     );
   }
@@ -88,7 +92,8 @@ function PokemonInfoBlock({height, weight, category, abilities, genderRate}: Pok
       <div className={'column'}>
         <div><span className={'heading'}>Category</span> <span className={'data'}>{generaToCategory(category)}</span>
         </div>
-        <div><span className={'heading'}>Abilities</span> <span className={'data'}>{renderAbilities(abilities, setAbilityInfo)}</span>
+        <div><span className={'heading'}>Abilities</span> <span
+          className={'data'}>{renderAbilities(abilities, setAbilityInfo)}</span>
         </div>
       </div>
     </div>

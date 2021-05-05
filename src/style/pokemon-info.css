@@ -2,9 +2,9 @@
     background-color: #30a7d7;
     border-radius: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1em;
-    width: 100%;
+    width: 40em;
     font-family: 'Krona One', sans-serif;
 }
 
@@ -22,7 +22,6 @@
 .pokemon-info .column {
     display: flex;
     flex-direction: column;
-    margin-right: 2em;
 }
 
 .pokemon-info .column div {
@@ -33,4 +32,25 @@
 ul.pokemon-abilities {
     list-style: none;
     padding-inline-start: 0;
+}
+
+.ability-info {
+    display: flex;
+}
+
+.ability-info .ability-name {
+    font-size: 1.3em;
+    color: white;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.ability-info .column {
+    display: flex;
+    flex-direction: column;
+}
+
+.ability-info .close-button {
+    float: right;
 }
