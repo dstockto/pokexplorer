@@ -1,4 +1,4 @@
-import RestLink from "./RestLink";
+import {RestLink} from "./links";
 
 interface Type {
   slot: number,

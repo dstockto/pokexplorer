@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
+import "antd/dist/antd.css";
 import './App.css';
 import {useQuery} from "react-query";
 import getPokemonList from "./api/pokemonList";
-import RestLink from "./interface/RestLink";
 import SearchBox from "./Components/SearchBox";
 import PokemonDetails from "./Components/PokemonDetails";
 import PokemonList from "./Components/PokemonList";
 import LoadingSpinner from "./Components/LoadingSpinner";
 import GlobalLoader from "./Components/GlobalLoader";
+import {RestLink} from "./interface/links";
 
 function App() {
   const pokemonList = useQuery('pokemon_list', getPokemonList);
@@ -29,6 +30,7 @@ function App() {
       <PokemonList
         pokemonList={pokeFiltered().slice(0, 25)}
         choosePokemon={setPokemonUrl}
+        activePokemonUrl={pokemonUrl}
       >
         <SearchBox applyFilter={setFilter}/>
       </PokemonList>

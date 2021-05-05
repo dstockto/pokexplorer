@@ -1,5 +1,5 @@
-import RestLink from "./RestLink";
-import PokemonLink from "./PokemonLink";
+import TranslatedNameLink from "./TranslatedNameLink";
+import {GeneraLink, LanguageLink, PokedexLink, PokemonLink, RestLink, VersionLink} from "./links";
 
 interface PokemonSpecies {
   base_happiness: number,
@@ -13,18 +13,14 @@ interface PokemonSpecies {
   flavor_text_entries: [
     {
       flavor_text: string,
-      language: RestLink,
-      version: RestLink,
+      language: LanguageLink,
+      version: VersionLink,
     },
   ],
   form_descriptions: [],
   forms_switchable: boolean,
-  genera: [
-    {
-      genus: string,
-      language: RestLink,
-    }
-  ],
+  gender_rate: number,
+  genera: GeneraLink[],
   generation: RestLink,
   growth_rate: RestLink,
   habitat: RestLink,
@@ -35,10 +31,7 @@ interface PokemonSpecies {
   is_legendary: boolean,
   is_mythical: boolean,
   name: string,
-  names: [
-    language: RestLink,
-    name: string,
-  ],
+  names: TranslatedNameLink[],
   order: 2,
   pal_park_encounters: [
     {
@@ -50,7 +43,7 @@ interface PokemonSpecies {
   pokedex_numbers: [
     {
       entry_number: number,
-      pokedex: RestLink,
+      pokedex: PokedexLink,
     }
   ],
   shape: RestLink,

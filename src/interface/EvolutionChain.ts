@@ -1,6 +1,6 @@
 import EvolutionDetails from "./EvolutionDetails";
 import EvolvesTo from "./EvolvesTo";
-import SpeciesLink from "./SpeciesLink";
+import {SpeciesLink} from "./links";
 
 interface EvolutionChain {
   baby_trigger_item: string|null,

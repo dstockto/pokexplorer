@@ -1,5 +1,5 @@
 import VersionDetail from "./VersionDetail";
-import RestLink from "./RestLink";
+import {RestLink} from "./links";
 
 interface Move{
   move: RestLink,

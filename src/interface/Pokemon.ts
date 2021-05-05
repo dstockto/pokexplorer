@@ -1,13 +1,10 @@
 import Ability from "./Ability";
 import GameIndex from "./GameIndex";
 import Move from "./Move";
-import RestLink from "./RestLink";
 import Type from "./Type";
 import Sprites from "./Sprites";
 import Statistic from "./Statistic";
-import SpeciesLink from "./SpeciesLink";
-
-
+import {RestLink, SpeciesLink} from "./links";
 
 interface Pokemon {
   abilities: Ability[],

@@ -1,31 +1,35 @@
 import * as React from "react";
-import RestLink from "../interface/RestLink";
+import {Menu} from "antd";
+import {PokemonLink} from "../interface/links";
 
-function PokemonList({pokemonList, choosePokemon, children}: PokemonListProps) {
+function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: PokemonListProps) {
   return (
-    <div className={'pokelist'}>
+    <div style={{"display": "flex", flexDirection: "column"}}>
       {children}
-      {pokemonList.length === 0 &&
-      <p>No pokemon found</p>
-      }
-      {pokemonList.length > 0 &&
-      <ul>
-        {pokemonList.map((link) => (
-          <li key={link.name}>
-            <button onClick={() => {
-              choosePokemon(link.url)
-            }}>{link.name}</button>
-          </li>
-        ))}
-      </ul>
-      }
+      <Menu selectable={true} className={'pokelist'}>
+        {pokemonList.length === 0 && <Menu.Item unselectable={'off'}>No pokemon found</Menu.Item>}
+        {pokemonList.length > 0 && pokemonList.map((link) => {
+          return (
+            <Menu.Item
+              key={link.name}
+              isSelected={link.url === activePokemonUrl}
+              onClick={() => {
+                choosePokemon(link.url)
+              }}
+            >
+              {link.name}
+            </Menu.Item>
+          );
+        })}
+      </Menu>
     </div>
-  )
+  );
 }
 
 interface PokemonListProps {
-  pokemonList: RestLink[],
+  pokemonList: PokemonLink[],
   choosePokemon: (url: string) => void,
+  activePokemonUrl: string | null,
   children: JSX.Element[] | JSX.Element
 }
 

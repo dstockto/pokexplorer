@@ -1,7 +1,7 @@
-import RestLink from "./RestLink";
+import {AbilityLink} from "./links";
 
 interface Ability {
-  ability: RestLink,
+  ability: AbilityLink,
   is_hidden: boolean,
   slot: number,
 }

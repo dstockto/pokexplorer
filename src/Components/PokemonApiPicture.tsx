@@ -1,21 +1,18 @@
 import * as React from "react";
-import PokemonLink from "../interface/PokemonLink";
 import usePokemonDetails from "../api/usePokemonDetails";
-import Pokemon from "../interface/Pokemon";
 import LoadingSpinner from "./LoadingSpinner";
+import {PokemonLink} from "../interface/links";
 
 interface PokemonApiPictureProps {
   pokemonLink: PokemonLink,
 }
 
 function PokemonApiPicture({pokemonLink}: PokemonApiPictureProps) {
-  const {isLoading, data: pokemonResponse} = usePokemonDetails(pokemonLink.url);
+  const {isLoading, data: pokemon} = usePokemonDetails(pokemonLink.url);
 
-  if (isLoading) {
+  if (isLoading || pokemon === undefined) {
     return <LoadingSpinner />;
   }
-
-  const pokemon: Pokemon = pokemonResponse;
 
   return (
     <figure>
