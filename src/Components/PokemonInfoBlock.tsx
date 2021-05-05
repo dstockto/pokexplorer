@@ -48,9 +48,8 @@ function renderAbilities(abilities: Ability[], setAbilityInfo: (info: AbilityInf
   return (<ul className={'pokemon-abilities'}>
       {
         abilities
-          .filter((ability) => !ability.is_hidden)
           .map(ability =>
-            <PokemonAbility abilityLink={ability.ability} setAbility={setAbilityInfo}/>
+            <PokemonAbility abilityLink={ability.ability} setAbility={setAbilityInfo} isHidden={ability.is_hidden}/>
           )
       }
     </ul>
@@ -73,7 +72,7 @@ function PokemonInfoBlock({height, weight, category, abilities, genderRate}: Pok
           <div className={'description'}>{abilityInfo.flavorText}</div>
         </div>
         <div className={'column'}>
-          <Button type={"dashed"} onClick={() => setAbilityInfo(null)} className={'close-button'}>X</Button>
+          <Button type={"dashed"} onClick={() => setAbilityInfo(null)} className={'close-button'}>X Close</Button>
         </div>
       </div>
     );
