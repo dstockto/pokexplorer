@@ -1,13 +1,34 @@
 .poketype {
-    border-radius: 9999px;
     border-width: 1px;
     border-style: solid;
+    width: 140px;
+    height: 32px;
     margin-right: .2em;
     line-height: 1.2em;
     padding: .2em .5em;
     font-weight: bold;
     color: white;
     background-color: #666666;
+    text-align: center;
+    vertical-align: baseline;
+    font-family: 'Krona One', sans-serif;
+    border-radius: 8px;
+}
+
+.types {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.types .title {
+    font-size: 1.5em;
+    font-family: 'Krona One', sans-serif;
+    font-weight: bold;
+}
+
+.type-list {
+    display: flex;
 }
 
 .type-ice {
@@ -50,6 +71,7 @@
 .type-flying {
     border-color: darkblue;
     background-color: lightblue;
+    background: linear-gradient(180deg, #3dc7ef 0%, #bdb9b8 100%);
     color: black;
 }
 
@@ -74,7 +96,7 @@
 }
 
 .type-fire {
-    background-color: #ea730e;
+    background-color: #fd7d24;
     border-color: #dc2222;
 }
 
@@ -84,9 +106,9 @@
 }
 
 .type-grass {
-    border-color: darkgreen;
-    background-color: greenyellow;
-    color: darkgreen;
+    border-color: #9bcc50;
+    background-color: #9bcc50;
+    color: white;
 }
 
 .type-electric {

@@ -7,9 +7,19 @@ interface PokemonTypesProps {
 }
 
 function PokemonTypes({types}: PokemonTypesProps) {
-  return <div className={"types"}>
-    <strong>Types:</strong> {types.map((type) => <Poketype key={type.type.name} type={type.type.name}/>)}
-  </div>
+  let title = 'Type';
+  if (types.length !== 1) {
+    title = 'Types';
+  }
+
+  return (
+    <div className={'types'}>
+      <div className={'title'}>{title}</div>
+      <div className={"type-list"}>
+        {types.map((type) => <Poketype key={type.type.name} type={type.type.name}/>)}
+      </div>
+    </div>
+  );
 }
 
 export default PokemonTypes;
