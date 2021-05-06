@@ -9,6 +9,7 @@ import PokemonSpeciesFlavorText from "./PokemonSpeciesFlavorText";
 import PokemonHeader from "./PokemonHeader";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import PokemonInfoBlock from "./PokemonInfoBlock";
+import PokemonStatsBars from "./PokemonStatsBars";
 
 interface PokemonDetailsProps {
   url: string
@@ -34,7 +35,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       <div style={{display: "flex"}}>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonOfficialArt sprites={pokemon.sprites}/>
-          {/*<PokemonStatsBars />*/}
+          <PokemonStatsBars stats={pokemon.stats} />
         </div>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonSpeciesFlavorText species={pokemon.species}/>

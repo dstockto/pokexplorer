@@ -1,0 +1,48 @@
+.stats-block {
+    display: flex;
+    flex-direction: column;
+    background-color: #b4b4b4;
+    border-radius: 10px;
+    margin-top: 2em;
+    width: 475px;
+}
+
+.stats-block .title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.stats-graphs {
+    display: flex;
+    justify-content: center;
+}
+
+.bar-graph {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    margin-right: 5px;
+}
+
+.bar-graph .label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+
+.bar-graph .block {
+    border: 1px solid blue;
+    height: 10px;
+    margin-bottom: 3px;
+}
+
+.empty {
+    background-color: white;
+}
+
+.filled {
+    background-color: #0c5879;
+}

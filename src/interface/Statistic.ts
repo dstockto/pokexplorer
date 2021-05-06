@@ -1,9 +1,9 @@
-import {RestLink} from "./links";
+import StatLink from "./links/StatLink";
 
 interface Statistic {
   base_stat: number,
   effort: number,
-  stat: RestLink,
+  stat: StatLink,
 }
 
 export default Statistic;
