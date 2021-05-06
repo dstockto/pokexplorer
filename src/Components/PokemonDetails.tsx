@@ -10,6 +10,7 @@ import PokemonHeader from "./PokemonHeader";
 import PokemonSpecies from "../interface/PokemonSpecies";
 import PokemonInfoBlock from "./PokemonInfoBlock";
 import PokemonStatsBars from "./PokemonStatsBars";
+import PokemonTypes from "./PokemonTypes";
 
 interface PokemonDetailsProps {
   url: string
@@ -46,6 +47,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
             abilities={pokemon.abilities}
             genderRate={species.gender_rate}
           />
+          <PokemonTypes types={pokemon.types} />
           {/*<PokemonWeaknesses/>*/}
         </div>
       </div>

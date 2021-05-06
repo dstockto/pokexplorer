@@ -6,7 +6,7 @@ interface PoketypeProps {
 }
 
 function Poketype({type}: PoketypeProps) {
-  return (<span className={`poketype type-${type}`}>{type}</span>);
+  return (<div className={`poketype type-${type}`}>{type}</div>);
 }
 
 export default Poketype;
