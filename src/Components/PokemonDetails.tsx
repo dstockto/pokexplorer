@@ -11,6 +11,7 @@ import PokemonSpecies from "../interface/PokemonSpecies";
 import PokemonInfoBlock from "./PokemonInfoBlock";
 import PokemonStatsBars from "./PokemonStatsBars";
 import PokemonTypes from "./PokemonTypes";
+import PokemonWeaknesses from "./PokemonWeaknesses";
 
 interface PokemonDetailsProps {
   url: string
@@ -36,7 +37,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
       <div style={{display: "flex"}}>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonOfficialArt sprites={pokemon.sprites}/>
-          <PokemonStatsBars stats={pokemon.stats} />
+          <PokemonStatsBars stats={pokemon.stats}/>
         </div>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonSpeciesFlavorText species={pokemon.species}/>
@@ -47,8 +48,8 @@ function PokemonDetails({url}: PokemonDetailsProps) {
             abilities={pokemon.abilities}
             genderRate={species.gender_rate}
           />
-          <PokemonTypes types={pokemon.types} />
-          {/*<PokemonWeaknesses/>*/}
+          <PokemonTypes types={pokemon.types}/>
+          <PokemonWeaknesses types={pokemon.types}/>
         </div>
       </div>
       {/*<PokemonEvolution species={species.data}/>*/}

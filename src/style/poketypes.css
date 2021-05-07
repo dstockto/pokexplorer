@@ -3,7 +3,7 @@
     border-style: solid;
     width: 140px;
     height: 32px;
-    margin-right: .2em;
+    margin: .2em;
     line-height: 1.2em;
     padding: .2em .5em;
     font-weight: bold;
@@ -38,8 +38,8 @@
 }
 
 .type-steel {
-    border-color: #333333;
-    background-color: #666666;
+    border-color: #647373;
+    background-color: #9eb7b8;
 }
 
 .type-ground {
@@ -88,11 +88,6 @@
 .type-bug {
     background-color: #67ea57;
     border-color: #57ac48;
-}
-
-.type-steel {
-    background-color: #0c5879;
-    border-color: #043b55;
 }
 
 .type-fire {
