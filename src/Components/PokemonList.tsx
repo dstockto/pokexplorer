@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Menu} from "antd";
 import {PokemonLink} from "../interface/links";
+import {pokemonName} from "../functions";
 
 function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: PokemonListProps) {
   return (
@@ -17,7 +18,7 @@ function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: P
                 choosePokemon(link.url)
               }}
             >
-              {link.name}
+              {pokemonName(link.name)}
             </Menu.Item>
           );
         })}
