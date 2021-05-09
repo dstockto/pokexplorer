@@ -49,7 +49,12 @@ function renderAbilities(abilities: Ability[], setAbilityInfo: (info: AbilityInf
       {
         abilities
           .map(ability =>
-            <PokemonAbility abilityLink={ability.ability} setAbility={setAbilityInfo} isHidden={ability.is_hidden}/>
+            <PokemonAbility
+              key={ability.ability.name}
+              abilityLink={ability.ability}
+              setAbility={setAbilityInfo}
+              isHidden={ability.is_hidden}
+            />
           )
       }
     </ul>
