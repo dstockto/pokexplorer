@@ -15,7 +15,7 @@ function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: P
               key={link.name}
               isSelected={link.url === activePokemonUrl}
               onClick={() => {
-                choosePokemon(link.url)
+                choosePokemon(link);
               }}
             >
               {pokemonName(link.name)}
@@ -29,9 +29,9 @@ function PokemonList({pokemonList, choosePokemon, activePokemonUrl, children}: P
 
 interface PokemonListProps {
   pokemonList: PokemonLink[],
-  choosePokemon: (url: string) => void,
+  choosePokemon: (pokemonLink: PokemonLink) => void,
   activePokemonUrl: string | null,
-  children: JSX.Element[] | JSX.Element
+  children?: JSX.Element[] | JSX.Element
 }
 
 export default PokemonList;
