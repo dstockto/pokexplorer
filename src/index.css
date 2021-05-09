@@ -34,6 +34,8 @@ code {
 
 .official-art {
   margin-right: 1em;
+  height: 475px;
+  width: 475px;
 }
 
 .evolution-chain {
@@ -43,4 +45,3 @@ code {
   display: flex;
   align-content: center;
 }
-
