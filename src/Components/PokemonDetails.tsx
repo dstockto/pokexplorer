@@ -12,6 +12,7 @@ import PokemonInfoBlock from "./PokemonInfoBlock";
 import PokemonStatsBars from "./PokemonStatsBars";
 import PokemonTypes from "./PokemonTypes";
 import PokemonWeaknesses from "./PokemonWeaknesses";
+import {pokemonName} from "../functions";
 
 interface PokemonDetailsProps {
   url: string
@@ -33,7 +34,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
 
   return (
     <PokemonColor color={species.color.name}>
-      <PokemonHeader name={pokemon.name} id={pokemon.id}/>
+      <PokemonHeader name={pokemonName(pokemon.name)} id={pokemon.id}/>
       <div style={{display: "flex"}}>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonOfficialArt sprites={pokemon.sprites}/>

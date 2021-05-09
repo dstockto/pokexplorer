@@ -1,9 +1,9 @@
 import * as React from "react";
 import {AbilityLink} from "../interface/links";
-import {titleCase} from "title-case";
 import usePokemonAbility from "../api/usePokemonAbility";
 import AbilityResponse from "../interface/AbilityResponse";
 import {Button} from "antd";
+import {pokemonName} from "../functions";
 
 interface PokemonAbilityProps {
   abilityLink: AbilityLink,
@@ -37,7 +37,7 @@ function PokemonAbility({abilityLink: link, setAbility, isHidden}: PokemonAbilit
   const {isLoading, data} = usePokemonAbility(url);
   return (
     <li key={name} className={isHidden ? 'hidden-ability' : ''}>
-      {titleCase(name).replace('-', ' ')} {renderAbilityInfo(isLoading, data)}
+      {pokemonName(name)} {renderAbilityInfo(isLoading, data)}
     </li>
   );
 }
