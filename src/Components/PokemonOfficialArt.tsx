@@ -1,5 +1,6 @@
 import * as React from "react";
 import Sprites from "../interface/Sprites";
+import LoadingSpinner from "./LoadingSpinner";
 
 interface PokemonOfficialArtProps {
   sprites: Sprites,
@@ -8,7 +9,11 @@ interface PokemonOfficialArtProps {
 function PokemonOfficialArt({sprites}: PokemonOfficialArtProps) {
   const imgUrl = sprites.other["official-artwork"].front_default;
   if (imgUrl === null) {
-    return null;
+    return (
+      <div className={'official-art'}>
+        <LoadingSpinner/>
+      </div>
+    );
   }
 
   return (
