@@ -8,11 +8,11 @@ import PokemonDetails from "./Components/PokemonDetails";
 import PokemonList from "./Components/PokemonList";
 import LoadingSpinner from "./Components/LoadingSpinner";
 import GlobalLoader from "./Components/GlobalLoader";
-import {RestLink} from "./interface/links";
+import {PokemonLink, RestLink} from "./interface/links";
 
 function App() {
   const pokemonList = useQuery('pokemon_list', getPokemonList);
-  const [pokemonUrl, setPokemonUrl] = useState<string | null>(null);
+  const [pokemon, setPokemonLink] = useState<PokemonLink | null>(null);
   const [filter, setFilter] = useState<string | null>(null);
 
   const pokeFiltered = (): RestLink[] => {
@@ -29,13 +29,13 @@ function App() {
       {pokemonList.data &&
       <PokemonList
         pokemonList={pokeFiltered().slice(0, 25)}
-        choosePokemon={setPokemonUrl}
-        activePokemonUrl={pokemonUrl}
+        choosePokemon={setPokemonLink}
+        activePokemonUrl={pokemon?.url || null}
       >
         <SearchBox applyFilter={setFilter}/>
       </PokemonList>
       }
-      {pokemonUrl && <PokemonDetails url={pokemonUrl}/>}
+      {pokemon && <PokemonDetails url={pokemon.url} setPokemon={setPokemonLink} />}
     </div>
   );
 }

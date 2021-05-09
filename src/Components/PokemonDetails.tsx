@@ -13,12 +13,15 @@ import PokemonStatsBars from "./PokemonStatsBars";
 import PokemonTypes from "./PokemonTypes";
 import PokemonWeaknesses from "./PokemonWeaknesses";
 import {pokemonName} from "../functions";
+import AlternateForms from "./AlternateForms";
+import {PokemonLink} from "../interface/links";
 
 interface PokemonDetailsProps {
-  url: string
+  url: string,
+  setPokemon: (url: PokemonLink) => void,
 }
 
-function PokemonDetails({url}: PokemonDetailsProps) {
+function PokemonDetails({url, setPokemon}: PokemonDetailsProps) {
   const details = usePokemonDetails(url);
   const speciesData = usePokemonSpecies(details?.data?.species?.url || "");
   if (details.isLoading || speciesData.isLoading) {
@@ -35,6 +38,7 @@ function PokemonDetails({url}: PokemonDetailsProps) {
   return (
     <PokemonColor color={species.color.name}>
       <PokemonHeader name={pokemonName(pokemon.name)} id={pokemon.id}/>
+      <AlternateForms species={species} setPokemon={setPokemon} />
       <div style={{display: "flex"}}>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonOfficialArt sprites={pokemon.sprites}/>
