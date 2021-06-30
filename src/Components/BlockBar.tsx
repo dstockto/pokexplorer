@@ -13,9 +13,9 @@ function BlockBar({name, value}: BlockBarProps) {
   let contents = [];
   for (let i = 15; i > 0; i--) {
     if (i <= value) {
-      contents.push(<div key={i} className={'block filled'}/>);
+      contents.push(<div key={i} className={'block filled'} data-testid={'filled'} />);
     } else {
-      contents.push(<div key={i} className={'block empty'}/>);
+      contents.push(<div key={i} className={'block empty'} data-testid={'empty'} />);
     }
   }
 
