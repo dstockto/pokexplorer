@@ -14,7 +14,7 @@ function SearchBox({applyFilter}: SearchBoxProps) {
 
   return (
     <div>
-    <input value={filter || ''} onChange={doFilter} />
+    <input value={filter || ''} onChange={doFilter} data-testid={'filter'} />
     </div>
   )
 }
