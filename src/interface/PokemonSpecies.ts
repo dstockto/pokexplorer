@@ -1,5 +1,6 @@
 import TranslatedNameLink from "./TranslatedNameLink";
 import {GeneraLink, LanguageLink, PokedexLink, PokemonLink, RestLink, VersionLink} from "./links";
+import PokemonSpeciesVariety from "./PokemonSpeciesVariety";
 
 interface PokemonSpecies {
   base_happiness: number,
@@ -47,12 +48,7 @@ interface PokemonSpecies {
     }
   ],
   shape: RestLink,
-  varieties: [
-    {
-      is_default: boolean,
-      pokemon: PokemonLink,
-    }
-  ]
+  varieties: PokemonSpeciesVariety[],
 }
 
 export default PokemonSpecies;

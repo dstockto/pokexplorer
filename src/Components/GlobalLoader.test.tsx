@@ -1,23 +1,48 @@
 import * as React from "react";
 import {render} from "@testing-library/react";
 import GlobalLoader from "./GlobalLoader";
-import * as ReactQuery from "react-query";
-import {renderHook} from "@testing-library/react-hooks";
-import {useIsFetching} from "react-query";
+import {QueryClient, QueryClientProvider} from "react-query";
 
 describe('The global loader will appear when any API loads are happening', () => {
   it('will render hidden when there are no loads happening', async () => {
-    const client = new ReactQuery.QueryClient();
+    const client = new QueryClient();
     const wrapper = ((children: JSX.Element) => (
-      <ReactQuery.QueryClientProvider client={client}>
+      <QueryClientProvider client={client}>
         {children}
-      </ReactQuery.QueryClientProvider>
+      </QueryClientProvider>
     ));
 
+    //
+    // const {result} = renderHook(() => useIsFetching(), {wrapper});
 
-    const {result} = renderHook(() => useIsFetching(), {wrapper});
-
-
-
+    const {container} = render(wrapper(<GlobalLoader/>));
+    const loader = container.getElementsByClassName('global-loader');
+    expect(loader.length).toBe(1);
+    expect(loader[0]).toHaveClass('hidden');
+    const counter = loader[0].getElementsByTagName('span');
+    expect(counter[0]).toContainHTML('0');
   });
+
+  it('will render a counter', async () => {
+    const client = new QueryClient();
+    const wrapper = ((children: JSX.Element) => (
+      <QueryClientProvider client={client}>
+        {children}
+      </QueryClientProvider>
+    ));
+
+    const queries = Math.floor(Math.random() * 42);
+
+    client.isFetching = () => {
+      return queries;
+    }
+
+    const {container} = render(wrapper(<GlobalLoader/>));
+    const loader = container.getElementsByClassName('global-loader');
+    expect(loader.length).toBe(1);
+    expect(loader[0]).not.toHaveClass('hidden');
+    const counter = loader[0].getElementsByTagName('span');
+    expect(counter[0].textContent).toEqual(queries.toString());
+    expect(loader[0].getElementsByTagName('svg').length).toEqual(1);
+  })
 });
