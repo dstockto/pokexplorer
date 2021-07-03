@@ -6,14 +6,14 @@ import {QueryClient, QueryClientProvider} from "react-query";
 describe('The global loader will appear when any API loads are happening', () => {
   it('will render hidden when there are no loads happening', async () => {
     const client = new QueryClient();
+    client.isFetching = () => {
+      return 0;
+    }
     const wrapper = ((children: JSX.Element) => (
       <QueryClientProvider client={client}>
         {children}
       </QueryClientProvider>
     ));
-
-    //
-    // const {result} = renderHook(() => useIsFetching(), {wrapper});
 
     const {container} = render(wrapper(<GlobalLoader/>));
     const loader = container.getElementsByClassName('global-loader');
@@ -31,7 +31,7 @@ describe('The global loader will appear when any API loads are happening', () =>
       </QueryClientProvider>
     ));
 
-    const queries = Math.floor(Math.random() * 42);
+    const queries = Math.floor(Math.random() * 42) + 1;
 
     client.isFetching = () => {
       return queries;
@@ -44,5 +44,5 @@ describe('The global loader will appear when any API loads are happening', () =>
     const counter = loader[0].getElementsByTagName('span');
     expect(counter[0].textContent).toEqual(queries.toString());
     expect(loader[0].getElementsByTagName('svg').length).toEqual(1);
-  })
+  });
 });
