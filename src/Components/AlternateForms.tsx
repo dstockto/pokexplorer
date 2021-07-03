@@ -1,10 +1,10 @@
 import * as React from "react";
 import {PokemonLink} from "../interface/links";
 import {Button, Dropdown, Menu} from "antd";
-import {titleCase} from "title-case";
 import {DownOutlined} from '@ant-design/icons';
 import "../style/alternate-forms.css";
 import PokemonSpeciesVariety from "../interface/PokemonSpeciesVariety";
+import {pokemonName} from "../functions";
 
 interface AlternateFormsProps {
   varieties: PokemonSpeciesVariety[],
@@ -23,7 +23,7 @@ function AlternateForms({varieties, setPokemon}: AlternateFormsProps) {
         <Menu.Item key={variety.name}>
           <Button
             type={'text'}
-            onClick={() => setPokemon(variety)}>{titleCase(variety.name.replace('-', ' '))}
+            onClick={() => setPokemon(variety)}>{pokemonName(variety.name)}
           </Button>
         </Menu.Item>
       ))}
