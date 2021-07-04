@@ -7,7 +7,7 @@ interface PokemonOfficialArtProps {
 }
 
 function PokemonOfficialArt({sprites}: PokemonOfficialArtProps) {
-  const imgUrl = sprites.other["official-artwork"].front_default;
+  const imgUrl = sprites.other["official-artwork"].front_default || sprites.front_default;
   if (imgUrl === null) {
     return (
       <div className={'official-art'}>
@@ -18,7 +18,7 @@ function PokemonOfficialArt({sprites}: PokemonOfficialArtProps) {
 
   return (
     <div className={'official-art'}>
-      <img src={imgUrl} alt={"official pokemon art"} />
+      <img src={imgUrl} alt={"official pokemon art"} width={'400px'} height={'400px'}/>
     </div>
   );
 }
