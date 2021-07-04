@@ -12,24 +12,24 @@ import PokemonInfoBlock from "./PokemonInfoBlock";
 import PokemonStatsBars from "./PokemonStatsBars";
 import PokemonTypes from "./PokemonTypes";
 import PokemonWeaknesses from "./PokemonWeaknesses";
-import {pokemonName} from "../functions";
+import { pokemonName } from "../functions";
 import AlternateForms from "./AlternateForms";
-import {PokemonLink} from "../interface/links";
+import { PokemonLink } from "../interface/links";
 
 interface PokemonDetailsProps {
-  url: string,
-  setPokemon: (url: PokemonLink) => void,
+  url: string;
+  setPokemon: (url: PokemonLink) => void;
 }
 
-function PokemonDetails({url, setPokemon}: PokemonDetailsProps) {
+function PokemonDetails({ url, setPokemon }: PokemonDetailsProps) {
   const details = usePokemonDetails(url);
   const speciesData = usePokemonSpecies(details?.data?.species?.url || "");
   if (details.isLoading || speciesData.isLoading) {
-    return <LoadingSpinner/>;
+    return <LoadingSpinner />;
   }
 
   if (details.data === undefined || speciesData.data === undefined) {
-    return <LoadingSpinner/>;
+    return <LoadingSpinner />;
   }
 
   const pokemon: Pokemon = details.data;
@@ -37,15 +37,15 @@ function PokemonDetails({url, setPokemon}: PokemonDetailsProps) {
 
   return (
     <PokemonColor color={species.color.name}>
-      <PokemonHeader name={pokemonName(pokemon.name)} id={pokemon.id}/>
+      <PokemonHeader name={pokemonName(pokemon.name)} id={pokemon.id} />
       <AlternateForms varieties={species.varieties} setPokemon={setPokemon} />
-      <div style={{display: "flex"}}>
-        <div style={{display: "flex", flexDirection: "column"}}>
-          <PokemonOfficialArt sprites={pokemon.sprites}/>
-          <PokemonStatsBars stats={pokemon.stats}/>
+      <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <PokemonOfficialArt sprites={pokemon.sprites} />
+          <PokemonStatsBars stats={pokemon.stats} />
         </div>
-        <div style={{display: "flex", flexDirection: "column"}}>
-          <PokemonSpeciesFlavorText species={pokemon.species}/>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <PokemonSpeciesFlavorText species={pokemon.species} />
           <PokemonInfoBlock
             height={pokemon.height}
             category={species.genera}
@@ -53,8 +53,8 @@ function PokemonDetails({url, setPokemon}: PokemonDetailsProps) {
             abilities={pokemon.abilities}
             genderRate={species.gender_rate}
           />
-          <PokemonTypes types={pokemon.types}/>
-          <PokemonWeaknesses types={pokemon.types}/>
+          <PokemonTypes types={pokemon.types} />
+          <PokemonWeaknesses types={pokemon.types} />
         </div>
       </div>
       {/*<PokemonEvolution species={species.data}/>*/}
@@ -67,7 +67,7 @@ function PokemonDetails({url, setPokemon}: PokemonDetailsProps) {
       {/*  <PokemonSprites sprites={pokemon.sprites}/>*/}
       {/*</div>*/}
     </PokemonColor>
-  )
+  );
 }
 
 export default PokemonDetails;

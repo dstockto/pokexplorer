@@ -1,8 +1,8 @@
 import * as React from "react";
-import {fireEvent, getByTestId, render} from "@testing-library/react";
+import { fireEvent, getByTestId, render } from "@testing-library/react";
 import TestHooks from "./TestHooks";
 
-describe('it will work and do all the stuff the tests say it should', () => {
+describe("it will work and do all the stuff the tests say it should", () => {
   it("App loads with initial state of 0", () => {
     const { container } = render(<TestHooks />);
     const countValue = getByTestId(container, "countvalue");
@@ -34,13 +34,12 @@ describe('it will work and do all the stuff the tests say it should', () => {
     expect(window.localStorage.getItem("name")).toBe(newName);
   });
 
-  it('renders a name from local storage if it is in there', () => {
-    window.localStorage.setItem('name', 'Bobo');
+  it("renders a name from local storage if it is in there", () => {
+    window.localStorage.setItem("name", "Bobo");
 
-    const {container} = render(<TestHooks/>);
-    const nameValue = getByTestId(container, 'namevalue');
+    const { container } = render(<TestHooks />);
+    const nameValue = getByTestId(container, "namevalue");
 
-    expect(nameValue.textContent).toEqual('Bobo');
+    expect(nameValue.textContent).toEqual("Bobo");
   });
 });
-

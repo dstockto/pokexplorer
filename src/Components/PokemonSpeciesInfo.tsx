@@ -3,21 +3,27 @@ import usePokemonSpecies from "../api/usePokemonSpecies";
 import LoadingSpinner from "./LoadingSpinner";
 
 interface PokemonSpeciesInfoProps {
-  species: string
+  species: string;
 }
 
-function PokemonSpeciesInfo({species} : PokemonSpeciesInfoProps) {
+function PokemonSpeciesInfo({ species }: PokemonSpeciesInfoProps) {
   const speciesInfo = usePokemonSpecies(species);
   if (speciesInfo.isLoading) {
-    return (<LoadingSpinner />)
+    return <LoadingSpinner />;
   }
 
   if (speciesInfo.data === undefined) {
-    return <LoadingSpinner />
+    return <LoadingSpinner />;
   }
 
-  const genus = speciesInfo.data.genera.filter((genera: any) => genera.language.name === 'en')[0].genus;
-  return <div><strong>Genus:</strong> {genus}</div>;
+  const genus = speciesInfo.data.genera.filter(
+    (genera: any) => genera.language.name === "en"
+  )[0].genus;
+  return (
+    <div>
+      <strong>Genus:</strong> {genus}
+    </div>
+  );
 }
 
 export default PokemonSpeciesInfo;

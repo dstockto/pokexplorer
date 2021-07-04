@@ -1,129 +1,128 @@
 .poketype {
-    border-width: 1px;
-    border-style: solid;
-    width: 140px;
-    height: 32px;
-    margin: .2em;
-    line-height: 1.2em;
-    padding: .2em .5em;
-    font-weight: bold;
-    color: white;
-    background-color: #666666;
-    text-align: center;
-    vertical-align: baseline;
-    font-family: 'Krona One', sans-serif;
-    border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  width: 140px;
+  height: 32px;
+  margin: 0.2em;
+  line-height: 1.2em;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+  color: white;
+  background-color: #666666;
+  text-align: center;
+  vertical-align: baseline;
+  font-family: "Krona One", sans-serif;
+  border-radius: 8px;
 }
 
 .types {
-    margin-top: 1em;
-    display: flex;
-    flex-direction: column;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .types .title {
-    font-size: 1.5em;
-    font-family: 'Krona One', sans-serif;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-family: "Krona One", sans-serif;
+  font-weight: bold;
 }
 
 .type-list {
-    display: flex;
+  display: flex;
 }
 
 .type-ice {
-    border-color: blue;
-    background-color: #61dafb;
-    padding: .1em .5em;
+  border-color: blue;
+  background-color: #61dafb;
+  padding: 0.1em 0.5em;
 }
 
 .type-steel {
-    border-color: #647373;
-    background-color: #9eb7b8;
+  border-color: #647373;
+  background-color: #9eb7b8;
 }
 
 .type-ground {
-    background-color: saddlebrown;
-    border-color: black;
+  background-color: saddlebrown;
+  border-color: black;
 }
 
 .type-dark {
-    background-color: #282c34;
-    border-color: black;
-    color: #CCCCCC;
+  background-color: #282c34;
+  border-color: black;
+  color: #cccccc;
 }
 
 .type-ghost {
-    background-color: #4619ea;
-    border-color: #7037e5;
+  background-color: #4619ea;
+  border-color: #7037e5;
 }
 
 .type-normal {
-    background-color: gray;
-    border-color: #333333;
+  background-color: gray;
+  border-color: #333333;
 }
 
 .type-fighting {
-    border-color: darkred;
-    background-color: orangered;
+  border-color: darkred;
+  background-color: orangered;
 }
 
 .type-flying {
-    border-color: darkblue;
-    background-color: lightblue;
-    background: linear-gradient(180deg, #3dc7ef 0%, #bdb9b8 100%);
-    color: black;
+  border-color: darkblue;
+  background-color: lightblue;
+  background: linear-gradient(180deg, #3dc7ef 0%, #bdb9b8 100%);
+  color: black;
 }
 
 .type-poison {
-    background-color: purple;
-    border-color: mediumpurple;
+  background-color: purple;
+  border-color: mediumpurple;
 }
 
 .type-rock {
-    background-color: #a5726a;
-    border-color: #523f3f;
+  background-color: #a5726a;
+  border-color: #523f3f;
 }
 
 .type-bug {
-    background-color: #67ea57;
-    border-color: #57ac48;
+  background-color: #67ea57;
+  border-color: #57ac48;
 }
 
 .type-fire {
-    background-color: #fd7d24;
-    border-color: #dc2222;
+  background-color: #fd7d24;
+  border-color: #dc2222;
 }
 
 .type-water {
-    background-color: #2870c6;
-    border-color: #2f21e3;
+  background-color: #2870c6;
+  border-color: #2f21e3;
 }
 
 .type-grass {
-    border-color: #9bcc50;
-    background-color: #9bcc50;
-    color: white;
+  border-color: #9bcc50;
+  background-color: #9bcc50;
+  color: white;
 }
 
 .type-electric {
-    background-color: #eed540;
-    border-color: #000000;
-    color: black;
+  background-color: #eed540;
+  border-color: #000000;
+  color: black;
 }
 
 .type-psychic {
-    border-color: deeppink;
-    background-color: darkmagenta;
+  border-color: deeppink;
+  background-color: darkmagenta;
 }
 
 .type-dragon {
-    border-color: darkblue;
-    background-color: royalblue;
+  border-color: darkblue;
+  background-color: royalblue;
 }
 
 .type-fairy {
-    background-color: #ff09f2;
-    border-color: #ea0cb3;
+  background-color: #ff09f2;
+  border-color: #ea0cb3;
 }
-

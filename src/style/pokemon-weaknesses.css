@@ -1,27 +1,27 @@
 .pokemon-weaknesses {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1em;
-    margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .pokemon-weaknesses .title {
-    font-family: 'Krona One', sans-serif;
-    font-size: 1.5em;
-    font-weight: bold;
+  font-family: "Krona One", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .damage-relations {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 42em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 42em;
 }
 
 .damage-relations .type-list {
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: center;*/
-    align-items: flex-start;
-    align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: center;*/
+  align-items: flex-start;
+  align-content: center;
 }

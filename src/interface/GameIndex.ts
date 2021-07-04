@@ -1,8 +1,8 @@
-import {RestLink} from "./links";
+import { RestLink } from "./links";
 
 interface GameIndex {
-  game_index: number,
-  version: RestLink
+  game_index: number;
+  version: RestLink;
 }
 
 export default GameIndex;

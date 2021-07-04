@@ -1,9 +1,9 @@
 import useCounter from "./useCounter";
-import {act, renderHook} from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 
-describe('the useCounter hook works correctly', () => {
-  it('should increment counter', () => {
-    const {result, rerender} = renderHook(() => useCounter());
+describe("the useCounter hook works correctly", () => {
+  it("should increment counter", () => {
+    const { result } = renderHook(() => useCounter());
 
     expect(result.current.count).toBe(0);
 
@@ -14,15 +14,15 @@ describe('the useCounter hook works correctly', () => {
     expect(result.current.count).toBe(1);
   });
 
-  it('should reset the counter to the initial value', () => {
+  it("should reset the counter to the initial value", () => {
     let initialValue = 0;
-    const {result, rerender} = renderHook(() => useCounter(initialValue));
+    const { result, rerender } = renderHook(() => useCounter(initialValue));
 
     initialValue = 10;
     rerender();
 
     act(() => {
-      result.current.reset()
+      result.current.reset();
     });
 
     expect(result.current.count).toBe(10);
