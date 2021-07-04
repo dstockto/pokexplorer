@@ -45,7 +45,7 @@ function renderTypes(
     <div className={'damage-relations'}>
       <div className={'title'}>{title}</div>
       <div className={'type-list'}>
-        {types.map((type) => <Poketype type={type}/>)}
+        {types.map((type, i) => <Poketype key={`type`} type={type}/>)}
       </div>
     </div>
   );
