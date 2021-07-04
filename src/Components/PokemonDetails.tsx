@@ -38,7 +38,7 @@ function PokemonDetails({url, setPokemon}: PokemonDetailsProps) {
   return (
     <PokemonColor color={species.color.name}>
       <PokemonHeader name={pokemonName(pokemon.name)} id={pokemon.id}/>
-      <AlternateForms species={species} setPokemon={setPokemon} />
+      <AlternateForms varieties={species.varieties} setPokemon={setPokemon} />
       <div style={{display: "flex"}}>
         <div style={{display: "flex", flexDirection: "column"}}>
           <PokemonOfficialArt sprites={pokemon.sprites}/>

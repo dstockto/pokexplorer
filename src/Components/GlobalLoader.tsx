@@ -1,10 +1,10 @@
 import * as React from "react";
 import '../style/global-loader.css';
 import Loader from "react-loader-spinner";
-import {useIsFetching} from "react-query";
+import * as ReactQuery from "react-query";
 
 function GlobalLoader() {
-  const isFetching = useIsFetching();
+  const isFetching = ReactQuery.useIsFetching();
   let hidden = false;
   if (!isFetching) {
     hidden = true;
