@@ -6,14 +6,14 @@ export function pokemonName(name: string) {
 }
 
 export function decimetersToFeetAndInches(height: number) {
-  const inches = height * 3.9370079;
+  const inches = Math.ceil(height * 3.9370079);
   const feet = Math.floor(inches / 12);
   const remainder = inches - (feet * 12);
   return `${feet}' ${Math.ceil(remainder)}"`;
 }
 
 export function hectogramsToPounds(weight: number) {
-  const ounces = weight * 3.5273962;
+  const ounces = Math.ceil(weight * 3.5273962);
   const pounds = Math.floor(ounces / 16);
   const remainder = Math.ceil(ounces - (pounds * 16));
   return `${pounds} lbs ${remainder} oz`;

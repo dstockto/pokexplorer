@@ -12,4 +12,8 @@ describe('decimetersToFeetAndInches works correctly', () => {
   it('converts eternatus height correctly', () => {
     expect(decimetersToFeetAndInches(200)).toEqual('65\' 8"');
   });
+
+  it('converts trubbish height to 2ft 0in', () => {
+    expect(decimetersToFeetAndInches(6)).toEqual('2\' 0"');
+  });
 });
