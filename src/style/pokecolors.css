@@ -1,46 +1,46 @@
 .pokecolor {
-    padding: 1em;
-    border: 1px solid black;
-    z-index: 0;
-    width: 100%;
+  padding: 1em;
+  border: 1px solid black;
+  z-index: 0;
+  width: 100%;
 }
 
 .pokecolor-green {
-    background-color: #b6f5b6;
+  background-color: #b6f5b6;
 }
 
 .pokecolor-red {
-    background-color: #ffaaaa;
+  background-color: #ffaaaa;
 }
 
 .pokecolor-blue {
-    background-color: #b4b4f5;
+  background-color: #b4b4f5;
 }
 
 .pokecolor-white {
-    background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 
 .pokecolor-black {
-    background-color: #a0a0a0;
+  background-color: #a0a0a0;
 }
 
 .pokecolor-brown {
-    background-color: #a3642a;
+  background-color: #a3642a;
 }
 
 .pokecolor-pink {
-    background-color: #fabcc7;
+  background-color: #fabcc7;
 }
 
 .pokecolor-purple {
-    background-color: #936fdb;
+  background-color: #936fdb;
 }
 
 .pokecolor-yellow {
-    background-color: #fdfdbc;
+  background-color: #fdfdbc;
 }
 
 .pokecolor-gray {
-    background-color: #CCCCCC;
+  background-color: #cccccc;
 }

@@ -1,11 +1,11 @@
 import * as React from "react";
 
 interface BlockBarProps {
-  name: string,
-  value: number | undefined,
+  name: string;
+  value: number | undefined;
 }
 
-function BlockBar({name, value}: BlockBarProps) {
+function BlockBar({ name, value }: BlockBarProps) {
   if (value === undefined) {
     return null;
   }
@@ -13,16 +13,20 @@ function BlockBar({name, value}: BlockBarProps) {
   let contents = [];
   for (let i = 15; i > 0; i--) {
     if (i <= value) {
-      contents.push(<div key={i} className={'block filled'} data-testid={'filled'} />);
+      contents.push(
+        <div key={i} className={"block filled"} data-testid={"filled"} />
+      );
     } else {
-      contents.push(<div key={i} className={'block empty'} data-testid={'empty'} />);
+      contents.push(
+        <div key={i} className={"block empty"} data-testid={"empty"} />
+      );
     }
   }
 
   return (
-    <div className={'bar-graph'}>
+    <div className={"bar-graph"}>
       {contents}
-      <div className={'label'}>{name}</div>
+      <div className={"label"}>{name}</div>
     </div>
   );
 }

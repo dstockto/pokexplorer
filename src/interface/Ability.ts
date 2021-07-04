@@ -1,9 +1,9 @@
-import {AbilityLink} from "./links";
+import { AbilityLink } from "./links";
 
 interface Ability {
-  ability: AbilityLink,
-  is_hidden: boolean,
-  slot: number,
+  ability: AbilityLink;
+  is_hidden: boolean;
+  slot: number;
 }
 
 export default Ability;

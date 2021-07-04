@@ -1,19 +1,18 @@
-import {useQuery} from "react-query";
+import { useQuery } from "react-query";
 
 function useEvolutionChain(evolutionChain: string | undefined) {
   return useQuery(
-    ['evolution-chain', evolutionChain],
+    ["evolution-chain", evolutionChain],
     () => {
       if (evolutionChain === undefined) {
         return null;
       }
-      return fetch(evolutionChain).then(res => res.json());
+      return fetch(evolutionChain).then((res) => res.json());
     },
     {
-      enabled: !!evolutionChain
+      enabled: !!evolutionChain,
     }
   );
 }
 
 export default useEvolutionChain;
-

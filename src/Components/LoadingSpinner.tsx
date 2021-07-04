@@ -8,7 +8,7 @@ function LoadingSpinner() {
       color="#00BFFF"
       height={100}
       width={100}
-      data-testid={'loader'}
+      data-testid={"loader"}
     />
   );
 }

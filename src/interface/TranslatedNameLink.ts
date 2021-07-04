@@ -1,8 +1,8 @@
-import {RestLink} from "./links";
+import { RestLink } from "./links";
 
 interface TranslatedNameLink {
-  language: RestLink,
-  name: string,
+  language: RestLink;
+  name: string;
 }
 
 export default TranslatedNameLink;

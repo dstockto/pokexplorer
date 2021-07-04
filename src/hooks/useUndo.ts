@@ -1,26 +1,28 @@
-import * as React from 'react';
+import * as React from "react";
 
-const UNDO = 'UNDO';
-const REDO = 'REDO';
-const SET = 'SET';
-const RESET = 'RESET';
+const UNDO = "UNDO";
+const REDO = "REDO";
+const SET = "SET";
+const RESET = "RESET";
 
 interface stateInterface<T> {
-  past: T[],
-  present: T,
-  future: T[],
+  past: T[];
+  present: T;
+  future: T[];
 }
 
 interface actionTypeInterface<T> {
-  type: 'UNDO'|'REDO'|'SET'|'RESET',
-  newPresent?: T,
+  type: "UNDO" | "REDO" | "SET" | "RESET";
+  newPresent?: T;
 }
 
-function undoReducer<T>(state: stateInterface<T>, action: actionTypeInterface<T>) {
+function undoReducer<T>(
+  state: stateInterface<T>,
+  action: actionTypeInterface<T>
+) {
+  const { past, present, future } = state;
 
-  const {past, present, future} = state;
-
-  const {type, newPresent} = action;
+  const { type, newPresent } = action;
 
   switch (action.type) {
     case UNDO: {
@@ -75,7 +77,7 @@ function undoReducer<T>(state: stateInterface<T>, action: actionTypeInterface<T>
     }
 
     default: {
-      throw new Error(`Unhandled action type: ${type}`)
+      throw new Error(`Unhandled action type: ${type}`);
     }
   }
 }
@@ -89,19 +91,19 @@ function useUndo<T>(initialPresent: T) {
 
   const canUndo = state.past.length !== 0;
   const canRedo = state.future.length !== 0;
-  const undo = React.useCallback(() => dispatch({type: UNDO}), []);
-  const redo = React.useCallback(() => dispatch({type: REDO}), []);
+  const undo = React.useCallback(() => dispatch({ type: UNDO }), []);
+  const redo = React.useCallback(() => dispatch({ type: REDO }), []);
   const set = React.useCallback(
-    newPresent => dispatch({type: SET, newPresent}),
-    [],
+    (newPresent) => dispatch({ type: SET, newPresent }),
+    []
   );
 
   const reset = React.useCallback(
-    newPresent => dispatch({type: RESET, newPresent}),
-    [],
+    (newPresent) => dispatch({ type: RESET, newPresent }),
+    []
   );
 
-  return {...state, set, reset, undo, redo, canUndo, canRedo};
+  return { ...state, set, reset, undo, redo, canUndo, canRedo };
 }
 
 export default useUndo;
